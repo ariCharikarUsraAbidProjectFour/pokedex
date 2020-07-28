@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "style.scss",
+        "_setup.scss",
+        "_global.scss",
+        "_header.scss",
+        "_main.scss",
+        "_footer.scss",
+        "_responsive.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
