@@ -272,8 +272,13 @@ img {
 }
 
 body {
+<<<<<<< HEAD
   background-color: red;
   font-family: 'Press Start 2P', cursive, Arial;
+=======
+  background-color: yellow;
+  font-family: 'Press Start 2P', cursive;
+>>>>>>> c7c5a544a48f5fafacbfe81bd3668e254afb9eb9
   line-height: 7.5rem;
   margin-top: 150px;
 }
