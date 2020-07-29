@@ -272,19 +272,10 @@ img {
 }
 
 body {
-  background-color: red;
-  font-family: 'Press Start 2P', cursive, Arial;
+  background-color: blue;
+  font-family: 'Press Start 2P', cursive;
   line-height: 7.5rem;
   margin-top: 150px;
-}
-
-header .wrapper {
-  width: 60%;
-  background-color: white;
-  padding: 30px;
-  border: 5px solid blue;
-  -webkit-box-shadow: 5px 5px 0 black;
-          box-shadow: 5px 5px 0 black;
 }
 
 img {
