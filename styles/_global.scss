@@ -6,10 +6,10 @@ html {
    ul,
    h1,
    h2,
-   h3
-   p {
+   h3 {
        margin: 0;
        padding: 0;
+       text-transform: uppercase;
    }
 
    ul {
@@ -20,11 +20,7 @@ html {
        text-decoration: none;
        text-transform: uppercase;
    }
-   img {
-       width: 100%;
-       height: auto;
-       display: block;
-   }
+
    .wrapper{
        max-width: 1200px;
        margin: 0 auto;
@@ -44,4 +40,23 @@ header .wrapper {
     padding: 30px;
     border: 5px solid blue;
     box-shadow: 5px 5px 0 black;
+}
+
+h2 {
+    font-size: calc(1rem + 1vw);
+
+}
+
+.pokemonName {
+    padding: 30px;
+}
+
+.pokemonDescription {
+    background-color: aquamarine;
+    width: 50%;
+    margin: 30px auto;
+}
+
+.description {
+    text-transform: none;
 }

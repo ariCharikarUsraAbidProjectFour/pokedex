@@ -1,0 +1,36 @@
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+    h1 {
+        padding: 0 30px 0 30px;
+    }
+
+    .pokemonImage, .pokemonDescription {
+        width: 90%;
+    }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+    .pokeballFlexContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokeballFlexContainer img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .pokemonName {
+        line-height: 3rem;
+    }
+
+    .fillInForm button {
+        margin: 30px;
+    }
+
+
+
+}

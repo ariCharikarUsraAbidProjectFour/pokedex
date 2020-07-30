@@ -244,10 +244,10 @@ body,
 ul,
 h1,
 h2,
-h3
-p {
+h3 {
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 
 ul {
@@ -257,12 +257,6 @@ ul {
 a {
   text-decoration: none;
   text-transform: uppercase;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .wrapper {
@@ -287,6 +281,24 @@ header .wrapper {
           box-shadow: 5px 5px 0 black;
 }
 
+h2 {
+  font-size: calc(1rem + 1vw);
+}
+
+.pokemonName {
+  padding: 30px;
+}
+
+.pokemonDescription {
+  background-color: aquamarine;
+  width: 50%;
+  margin: 30px auto;
+}
+
+.description {
+  text-transform: none;
+}
+
 img {
   max-width: 150px;
   width: 100%;
@@ -302,10 +314,7 @@ img {
           justify-content: center;
 }
 
-.fillInForm,
-h1,
-h2,
-footer {
+* {
   text-align: center;
   text-transform: uppercase;
 }
@@ -324,7 +333,7 @@ footer {
 }
 
 h1 {
-  font-size: 3vw;
+  font-size: calc(2rem + 1vw);
   padding: 35px 30px 0 30px;
 }
 
@@ -337,7 +346,7 @@ input {
   background-color: black;
   color: white;
   text-align: center;
-  font-size: 2vw;
+  font-size: calc(1rem + 1vw);
   font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
 }
@@ -348,5 +357,52 @@ button {
   width: 300px;
   height: 60px;
   font-size: 2rem;
+}
+
+.pokemonImage {
+  width: 50%;
+  background-color: black;
+  border: 5px solid grey;
+  margin: 0 auto;
+  height: 250px;
+}
+
+.pokemonDescription p {
+  line-height: 2.5rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  h1 {
+    padding: 0 30px 0 30px;
+  }
+  .pokemonImage, .pokemonDescription {
+    width: 90%;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .pokeballFlexContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .pokeballFlexContainer img {
+    width: 70px;
+    height: 70px;
+  }
+  .pokemonName {
+    line-height: 3rem;
+  }
+  .fillInForm button {
+    margin: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
