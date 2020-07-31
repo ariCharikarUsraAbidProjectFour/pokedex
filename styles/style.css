@@ -375,6 +375,7 @@ button {
 
 .resultsSection {
   display: none;
+  margin-top: 30px;
 }
 
 /* Landscape phone to portrait tablet */
