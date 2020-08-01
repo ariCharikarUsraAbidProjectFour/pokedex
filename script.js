@@ -16,24 +16,38 @@ pokeDex.getInfo = function(name) {
           const displayImg = $('.pokeImg').attr('src', result.sprites.front_default);
       })
 }
+
+pokeDex.errorCatch = function(){
+    if (!/^[a-z]+$/.test($('input').val())){
+        alert('error:please enter pokemon name!')
+    }
+    else{
+    const pokemonName = pokeDex.collectInfo();
+    $('#nameOfPokemon').val('');
+    console.log(pokemonName);
+    pokeDex.getInfo(pokemonName);
+    $('.resultsSection').show();
+    $('.formSection').hide();
+    }
+}
+
+
 pokeDex.eventlisteners = function () {
 
         $('form').on('submit', function(){
-        const pokemonName = pokeDex.collectInfo();
-        $('#nameOfPokemon').val('');
-        console.log(pokemonName);
-        pokeDex.getInfo(pokemonName);
-        $('.resultsSection').show();
-        $('.formSection').hide();
-    })
+          pokeDex.errorCatch(); 
 
-    
         $('.resetButton').on('click', function(e) {
             $('.formSection').show();
             $('.resultsSection').hide(); 
             e.preventDefault();
-        }) 
-    }
+        
+        })
+    })
+
+}
+
+        
 // Start app
 pokeDex.init = function () {
     pokeDex.eventlisteners();
