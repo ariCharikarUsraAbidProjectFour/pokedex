@@ -11,34 +11,23 @@ pokeDex.getInfo = function(name) {
         method: 'GET',
         dataType: 'json'
       }).then(function(result) {
-        console.log(result);
+          console.log(result);
+          const displayName = $('.outputName').html(result.name);
+          const displayImg = $('.pokeImg').attr('src', result.sprites.front_default);
       })
 }
-// Display data on the page
-pokeDex.displayInfo = function() {};
 pokeDex.eventlisteners = function () {
-    const errorMessage = function() {
-        if (pokeDex.collectInfo() !== pokeDex.getInfo()) {
-         alert ('wrong');
-        }
-        else if (pokeDex.collectInfo() === parseInt($('#nameOfPokemon').val())) {
-            alert('You dont write pokemon with numbers!');
-        }
-        else {
-            pokeDex.getInfo();
-        }
-    }
-    const formDisplay = $('form').on('submit', function(){
-        errorMessage();
+
+        $('form').on('submit', function(){
+        const pokemonName = pokeDex.collectInfo();
+        $('#nameOfPokemon').val('');
+        console.log(pokemonName);
+        pokeDex.getInfo(pokemonName);
         $('.resultsSection').show();
         $('.formSection').hide();
     })
-        // console.log($(this));
-    // jquery element of this
-        const pokemonName = pokeDex.collectInfo();
-        console.log(pokemonName);
-        pokeDex.getInfo(pokemonName);
-        pokeDex.errorHandling();
+
+    
         $('.resetButton').on('click', function(e) {
             $('.formSection').show();
             $('.resultsSection').hide(); 

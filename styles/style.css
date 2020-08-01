@@ -378,6 +378,11 @@ button {
   margin-top: 30px;
 }
 
+.pokeImg {
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
   h1 {
