@@ -1,7 +1,7 @@
 const pokeDex = {};
 // Collect user input
 pokeDex.collectInfo = function() {
-   return $('#nameOfPokemon').val();
+   return $('#nameOfPokemon').val().toLowerCase();
 };
 // Make AJAX request with user inputted data
 pokeDex.getInfo = function(name) {
@@ -11,11 +11,35 @@ pokeDex.getInfo = function(name) {
         method: 'GET',
         dataType: 'json'
       }).then(function(result) {
+          // this is to empty out ever
+          $('.resultsSection').empty();  
           console.log(result);
-          const displayName = $('.outputName').html(result.name);
-          const displayImg = $('.pokeImg').attr('src', result.sprites.front_default);
-      })
+          const pokemonOutput =
+          `<div class="outputContainer">
+                    <div class="pokemonImage">
+                        <img class ="pokeImg" src="${result.sprites.front_default}" alt="${result.name}">    
+                    </div>
+                        <div class="pokemonDescription">
+                            <h2 class="outputName">${result.name}</h2>
+                            <p class="description"></p>
+                        </div>
+                            
+            </div>`
+                $('.resultsSection').append(pokemonOutput)
+                console.log(pokemonOutput)
+      }).fail((error) => {
+         $('.resultsSection').empty(); 
+                 const errorDisplay = 
+                `<div class="displayError">
+                <p class="errorMessage">Not a pokemon!</p>
+                </div>`
+
+    $('.resultsSection').append(errorDisplay)
+      
+    })
+
 }
+
 
 pokeDex.errorCatch = function(){
     
@@ -28,6 +52,7 @@ pokeDex.errorCatch = function(){
     console.log(pokemonName);
     pokeDex.getInfo(pokemonName);
     $('.resultsSection').show();
+    $('.resetSection').show();
     $('.formSection').hide();
     }
 
@@ -36,6 +61,10 @@ pokeDex.errorCatch = function(){
 
 
 pokeDex.eventlisteners = function () {
+        
+        $('form').on('submit', function(e){
+            // e.preventDefault();
+            pokeDex.errorCatch();
 
         $('form').on('submit', function(){
           pokeDex.errorCatch(); 
@@ -43,9 +72,12 @@ pokeDex.eventlisteners = function () {
             $('#nameOfPokemon').val('');
             $('.formSection').show();
             $('.resultsSection').hide(); 
+            $('.resetSection').hide();
             e.preventDefault();
         
         })
+
+    })
     })
 
 }

@@ -384,8 +384,21 @@ button {
 }
 
 .displayError {
-  background-color: green;
+  background-color: gray;
+  width: 50%;
+  margin: 0 auto;
   font-size: 2rem;
+  height: 200px;
+  text-align: center;
+}
+
+.displayError p {
+  padding-top: 50px;
+  font-size: calc(1rem + 1vw);
+}
+
+.resetSection {
+  display: none;
 }
 
 /* Landscape phone to portrait tablet */
