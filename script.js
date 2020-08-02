@@ -20,12 +20,11 @@ pokeDex.getInfo = function(name) {
 pokeDex.errorCatch = function(){
     
     if (!/^[a-z]+$/.test($('input').val())){
-        // alert('error:please enter pokemon name!')
-        $('form').html(errorDisplay)
+        alert('error:please enter pokemon name!')
+        // $('form').html(errorDisplay)
     }
     else {
     const pokemonName = pokeDex.collectInfo();
-    $('#nameOfPokemon').val('');
     console.log(pokemonName);
     pokeDex.getInfo(pokemonName);
     $('.resultsSection').show();
@@ -40,8 +39,8 @@ pokeDex.eventlisteners = function () {
 
         $('form').on('submit', function(){
           pokeDex.errorCatch(); 
-
         $('.resetButton').on('click', function(e) {
+            $('#nameOfPokemon').val('');
             $('.formSection').show();
             $('.resultsSection').hide(); 
             e.preventDefault();
