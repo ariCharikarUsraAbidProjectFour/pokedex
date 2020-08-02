@@ -44,7 +44,7 @@ pokeDex.getInfo = function(name) {
 pokeDex.errorCatch = function(){
     
     if (!/^[a-z]+$/.test($('input').val())){
-        alert('error:please enter pokemon name lower case!')
+        alert('please enter pokemon name not number!')
         // $('form').html(errorDisplay)
     }
     else {
