@@ -240,6 +240,19 @@ html {
 }
 
 /* stripping of styles */
+body {
+  background-color: red;
+  font-family: 'Press Start 2P', cursive, Arial;
+  line-height: 7.5rem;
+  margin-top: 150px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 85%;
+}
+
 body,
 ul,
 h1,
@@ -259,17 +272,10 @@ a {
   text-transform: uppercase;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 85%;
-}
-
-body {
-  background-color: red;
-  font-family: 'Press Start 2P', cursive, Arial;
-  line-height: 7.5rem;
-  margin-top: 150px;
+img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
 }
 
 header .wrapper {
@@ -279,6 +285,7 @@ header .wrapper {
   border: 5px solid blue;
   -webkit-box-shadow: 5px 5px 0 black;
           box-shadow: 5px 5px 0 black;
+  margin-top: 100px;
 }
 
 h2 {
@@ -297,21 +304,6 @@ h2 {
 
 .description {
   text-transform: none;
-}
-
-img {
-  max-width: 150px;
-  width: 100%;
-  height: auto;
-}
-
-.pokeballFlexContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 * {
@@ -357,6 +349,15 @@ button {
   width: 300px;
   height: 60px;
   font-size: 2rem;
+}
+
+.pokeballFlexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pokemonImage {
