@@ -18,10 +18,12 @@ pokeDex.getInfo = function(name) {
 }
 
 pokeDex.errorCatch = function(){
+    
     if (!/^[a-z]+$/.test($('input').val())){
-        alert('error:please enter pokemon name!')
+        // alert('error:please enter pokemon name!')
+        $('form').html(errorDisplay)
     }
-    else{
+    else {
     const pokemonName = pokeDex.collectInfo();
     $('#nameOfPokemon').val('');
     console.log(pokemonName);
@@ -29,6 +31,8 @@ pokeDex.errorCatch = function(){
     $('.resultsSection').show();
     $('.formSection').hide();
     }
+
+
 }
 
 

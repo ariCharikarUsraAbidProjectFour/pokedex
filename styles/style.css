@@ -383,6 +383,11 @@ button {
   padding-top: 20px;
 }
 
+.displayError {
+  background-color: green;
+  font-size: 2rem;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
   h1 {
