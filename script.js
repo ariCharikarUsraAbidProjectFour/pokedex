@@ -1,7 +1,7 @@
 const pokeDex = {};
 // Collect user input
 pokeDex.collectInfo = function() {
-   return $('#nameOfPokemon').val().toLowerCase();
+    return $('#nameOfPokemon').val().toLowerCase();
 };
 // Make AJAX request with user inputted data
 pokeDex.getInfo = function(name) {
@@ -10,29 +10,27 @@ pokeDex.getInfo = function(name) {
         url: urlAddress, 
         method: 'GET',
         dataType: 'json'
-      }).then(function(result) {
+    }).then(function(result) {
           // this is to empty out ever
-          $('.resultsSection').empty();  
-          console.log(result);
-          const pokemonOutput =
-          `<div class="outputContainer">
-                    <div class="pokemonImage">
-                        <img class ="pokeImg" src="${result.sprites.front_default}" alt="${result.name}">    
-                    </div>
-                        <div class="pokemonDescription">
-                            <h2 class="outputName">${result.name}</h2>
-                            <p class="description"></p>
-                        </div>
-                            
-            </div>`
-                $('.resultsSection').append(pokemonOutput)
-                console.log(pokemonOutput)
-      }).fail((error) => {
-         $('.resultsSection').empty(); 
-                 const errorDisplay = 
-                `<div class="displayError">
+        $('.resultsSection').empty();  
+        const pokemonOutput =
+            `<div class="outputContainer">
+                <div class="pokemonImage">
+                    <img class ="pokeImg" src="${result.sprites.front_default}" alt="${result.name}">    
+                </div>
+                <div class="pokemonDescription">
+                    <h2 class="outputName">${result.name}</h2>
+                    <p class="description"></p>
+                </div>
+                                
+            </div>`;
+        $('.resultsSection').append(pokemonOutput);
+    }).fail((error) => {
+        $('.resultsSection').empty(); 
+        const errorDisplay = 
+            `<div class="displayError">
                 <p class="errorMessage">Not a pokemon!</p>
-                </div>`
+            </div>`;
 
     $('.resultsSection').append(errorDisplay)
       
