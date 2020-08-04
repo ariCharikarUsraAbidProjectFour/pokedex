@@ -54,6 +54,22 @@
         height: 250px;
     }
 
+    
+    //result section styles
+    .pokemonName {
+        padding: 30px;
+    }
+
+
+    .pokemonDescription {
+        background-color:white;
+        border-radius: 10px;
+        width: 40%;
+        margin: 30px auto;
+        padding-bottom: 20px;
+        border: 7px solid blue;
+        box-shadow: 10px 10px 0 black;
+    }
 
 
     .pokemonDescription p {
@@ -88,5 +104,10 @@
 
     .resetSection {
         display:none;
+    }
+
+    .description{
+        font-size: calc(0.5rem + 1vw);
+        text-transform: capitalize;
     }
 

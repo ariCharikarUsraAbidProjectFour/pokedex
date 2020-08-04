@@ -292,20 +292,6 @@ h2 {
   font-size: calc(1rem + 1vw);
 }
 
-.pokemonName {
-  padding: 30px;
-}
-
-.pokemonDescription {
-  background-color: aquamarine;
-  width: 50%;
-  margin: 30px auto;
-}
-
-.description {
-  text-transform: none;
-}
-
 * {
   text-align: center;
   text-transform: uppercase;
@@ -368,6 +354,21 @@ button {
   height: 250px;
 }
 
+.pokemonName {
+  padding: 30px;
+}
+
+.pokemonDescription {
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
+  margin: 30px auto;
+  padding-bottom: 20px;
+  border: 7px solid blue;
+  -webkit-box-shadow: 10px 10px 0 black;
+          box-shadow: 10px 10px 0 black;
+}
+
 .pokemonDescription p {
   line-height: 2.5rem;
   width: 70%;
@@ -402,13 +403,15 @@ button {
   display: none;
 }
 
+.description {
+  font-size: calc(0.5rem + 1vw);
+  text-transform: capitalize;
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
   h1 {
     padding: 0 30px 0 30px;
-  }
-  .pokemonImage, .pokemonDescription {
-    width: 90%;
   }
 }
 
@@ -432,6 +435,19 @@ button {
   }
   .fillInForm button {
     margin: 30px;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+  .outputName {
+    font-size: 2rem;
+  }
+  .pokemonDescription {
+    width: 50%;
+  }
+  .resetSection button {
+    width: 50%;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

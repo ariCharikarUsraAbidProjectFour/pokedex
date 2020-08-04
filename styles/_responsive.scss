@@ -4,9 +4,6 @@
         padding: 0 30px 0 30px;
     }
 
-    .pokemonImage, .pokemonDescription {
-        width: 90%;
-    }
 
 }
 
@@ -31,6 +28,24 @@
         margin: 30px;
     }
 
+    .description{
+        font-size: 1.5rem 
+    }
+
+    .outputName{
+        font-size:2rem;
+    }
+
+    .pokemonDescription{
+        width:50%;
+    }
+
+    .resetSection button{
+        width:50%;
+        margin: 0 auto;
+    }
+
 
 
 }
+

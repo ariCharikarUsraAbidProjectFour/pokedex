@@ -11,8 +11,9 @@ pokeDex.getInfo = function(name) {
         method: 'GET',
         dataType: 'json'
     }).then(function(result) {
-          // this is to empty out ever
+          // this is to empty out everytime user inputs data 
         $('.resultsSection').empty();  
+        // Displays result and error message
         const pokemonOutput =
             `<div class="outputContainer">
                 <div class="pokemonImage">
@@ -20,12 +21,13 @@ pokeDex.getInfo = function(name) {
                 </div>
                 <div class="pokemonDescription">
                     <h2 class="outputName">${result.name}</h2>
-                    <p class="description"></p>
+                    <p class="description">${result.types[0].type.name}</p>
                 </div>
                                 
             </div>`;
         $('.resultsSection').append(pokemonOutput);
     }).fail((error) => {
+        // if user input is incorrect then an error message will be shown
         $('.resultsSection').empty(); 
         const errorDisplay = 
             `<div class="displayError">
@@ -37,8 +39,9 @@ pokeDex.getInfo = function(name) {
 
 }
 
-
+// catch errors in user's input
 pokeDex.errorCatch = function(){
+    // if user inputs any numerical value then error message is shown
     
     if (!/^[a-z]+$/.test(pokeDex.collectInfo())) {
         alert('error:please enter pokemon name!')
@@ -55,18 +58,18 @@ pokeDex.errorCatch = function(){
 
 }
 
-
+//eventlistner
 pokeDex.eventlisteners = function () {
 
-        $('form').on('submit', function(){
-          pokeDex.errorCatch(); 
+    $('form').on('submit', function(){
+        pokeDex.errorCatch(); 
 
-        $('.resetSection').on('click', function(e) {
-            $('#nameOfPokemon').val('');
-            $('.formSection').show();
-            $('.resultsSection').hide(); 
-            $('.resetSection').hide();
-            e.preventDefault();
+    $('.resetSection').on('click', function(e) {
+    $('#nameOfPokemon').val('');
+    $('.formSection').show();
+    $('.resultsSection').hide(); 
+    $('.resetSection').hide();
+    e.preventDefault();
         
 
 
