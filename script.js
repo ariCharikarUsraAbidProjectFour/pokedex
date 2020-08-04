@@ -32,8 +32,7 @@ pokeDex.getInfo = function(name) {
                 <p class="errorMessage">Not a pokemon!</p>
             </div>`;
 
-    $('.resultsSection').append(errorDisplay)
-      
+    $('.resultsSection').append(errorDisplay)   
     })
 
 }
@@ -41,13 +40,12 @@ pokeDex.getInfo = function(name) {
 
 pokeDex.errorCatch = function(){
     
-    if (!/^[a-z]+$/.test($('input').val())){
+    if (!/^[a-z]+$/.test(pokeDex.collectInfo())) {
         alert('error:please enter pokemon name!')
         // $('form').html(errorDisplay)
     }
     else {
     const pokemonName = pokeDex.collectInfo();
-    console.log(pokemonName);
     pokeDex.getInfo(pokemonName);
     $('.resultsSection').show();
     $('.resetSection').show();
@@ -59,21 +57,18 @@ pokeDex.errorCatch = function(){
 
 
 pokeDex.eventlisteners = function () {
-        
-        $('form').on('submit', function(e){
-            // e.preventDefault();
-            pokeDex.errorCatch();
 
         $('form').on('submit', function(){
           pokeDex.errorCatch(); 
-        $('.resetButton').on('click', function(e) {
+
+        $('.resetSection').on('click', function(e) {
             $('#nameOfPokemon').val('');
             $('.formSection').show();
             $('.resultsSection').hide(); 
             $('.resetSection').hide();
             e.preventDefault();
         
-        })
+
 
     })
     })
